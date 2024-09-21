@@ -1,0 +1,297 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-size: 62.5%;
+
+}
+
+body {
+  font-family: "Inter Tight", system-ui;
+  font-size: 1.6rem;
+  padding: 2.4rem;
+}
+
+header {
+  display: grid;
+  gap: .8rem;
+  padding-bottom: 2.4rem;
+  margin-bottom: 2.4rem;
+  border-bottom: 1px solid #D7DDE9
+}
+
+header :nth-child(2) {
+  color: #000;
+  font-weight: 500;
+  letter-spacing: -0.32px;
+}
+
+header :nth-child(3) {
+  color: rgba(0, 0, 0, 0.54);
+  font-weight: 400;
+  letter-spacing: -0.32px;
+}
+
+.app {
+  display: grid;
+  justify-items: center;
+  gap: 2.4rem;
+}
+
+#my-form {
+  border: 1px solid #EAECF0;
+  border-radius: 1.6rem;
+  padding: 3.2rem;
+  box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.05);
+  text-align: center;
+  width: 100%;
+  max-width: 45rem;
+}
+
+fieldset {
+  border: none;
+}
+
+.fieldset-wrapper {
+  display: grid;
+  gap: .8rem;
+}
+
+legend {
+  color: rgba(0, 0, 0, 0.54);
+  margin-bottom: 2.4rem;
+}
+
+.checkbox-wrapper {
+  border: 1px dashed #D7DDE9;
+  padding: 1.6rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.6rem;
+  
+  
+  border-radius: .8rem;
+}
+
+#my-form .completedTasks  {
+  margin-top: 2.4rem;
+}
+
+.completedTasks label {
+  color: rgba(0, 0, 0, 0.54);
+  text-decoration: line-through;
+}
+
+.checkbox-wrapper {
+  position: relative;
+}
+
+.checkbox-wrapper label {
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
+
+  text-align: justify;
+  /* font-weight: 400; */
+  letter-spacing: -0.32px;
+
+}
+
+.checkbox-wrapper input {
+  position: absolute;
+  top:16px;
+  left:16px;
+  width: 24px;
+  height: 24px;
+
+  opacity: 0;
+}
+
+.completedTasks label {
+  color: rgba(0, 0, 0, 0.54);
+  text-decoration: line-through;
+}
+
+.checkbox-wrapper label::before {
+  content: '';
+  min-width: 24px;
+  height: 24px;
+
+  display: block;
+
+  border: 1px solid #B0BBD1;
+  border-radius: .4rem;
+}
+
+.checkbox-wrapper input:checked + label::before{
+  background: #A0DCF6;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 18 18' fill='none'%3E%3Cpath d='M15 4.5L6.75 12.75L3 9' stroke='%230796D3' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  border-radius: 4px;
+  border: 1px solid #0796D3;
+}
+
+.checkbox-wrapper img {
+  cursor: pointer;
+}
+
+
+.add button {
+  padding: 1.6rem 2.4rem;
+  border: none;
+  border-radius: 8px;
+  background: linear-gradient(90deg, #0796D3 0%, #53C0F0 68.65%);
+
+  color: #FFF;
+  font-weight: 500;
+
+  width: 277px;
+  
+  cursor: pointer;
+}
+
+
+/* Modal */
+.modalAdd-wrapper, .modalDelete-wrapper {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.modalAdd-wrapper, .modalDelete-wrapper {
+  position: absolute;
+  inset: 0;
+  display: grid;
+}
+
+.modalAdd, .modalDelete {
+  background: #FFF;
+  padding: 3.2rem;
+}
+
+.modalAdd-wrapper.open, .modalDelete-wrapper.open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.title {
+  margin-bottom: 3.2rem;
+
+  font-size: 2.4rem;
+  font-style: normal;
+  font-weight: 500;
+  letter-spacing: -0.48px;
+}
+
+.modal-card {
+  display: grid;
+  gap: .8rem;
+}
+
+.modal-card input {
+  padding: 1.6rem;
+  border: 1px solid #D7DDE9;
+  border-radius: .8rem;
+}
+
+.modal-card input::placeholder {
+  color: rgba(0, 0, 0, 0.56);
+}
+
+.buttons {
+  margin-top: 3.2rem;
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 1.6rem;
+  width: 100%;
+}
+
+.buttons button {
+  padding: 1.6rem;
+  width: 100%;
+  border-radius: .8rem;
+  border: none;
+
+  font-size: 1.6rem;
+  font-family: "Inter Tight", system-ui;
+
+  cursor: pointer;
+}
+
+.buttons .close {
+  background: #E7EEFB;
+}
+
+.buttons button + button {
+  background: linear-gradient(90deg, #0796D3 0%, #53C0F0 68.65%);
+  color: #FFF;
+}
+
+/* ModalDelete */
+
+.modalDelete p {
+  color: rgba(0, 0, 0, 0.54);
+}
+
+.buttons .delete {
+  background: linear-gradient(90deg, #D30707 0%, #F05353 68.65%);
+}
+
+
+/* Media 40rem */
+
+@media (min-width: 40rem) {
+  body {
+    padding: 2.4rem 0 0;
+  }
+
+  header {
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: center;
+    margin: 2.4rem 5.6rem 4rem;
+  }
+
+  header :nth-child(2) {
+    justify-self: center;
+    font-size: 2.4rem;
+    letter-spacing: -0.48px;
+  }
+
+  header :nth-child(3) {
+    justify-self: end;
+  }
+
+  .fieldset-wrapper {
+    gap: 2.4rem;
+  }
+
+  .checkbox-wrapper:hover {
+    background: #F7F9FD;
+    cursor: pointer;
+  }
+
+  .add button {
+    width: 45rem;
+  }
+
+  /* Modal */
+  
+  .modalAdd-wrapper, .modalDelete-wrapper {
+    background: rgba(255, 255, 255, 0.80);
+    place-content: center;
+  }
+
+  .modalAdd, .modalDelete {
+    border-radius: 1.6rem;
+    box-shadow: 0px 24px 48px -12px rgba(16, 24, 40, 0.18);
+
+    width: 45rem;
+  }
+
+  .buttons {
+    flex-direction: row;
+  }
+}
+

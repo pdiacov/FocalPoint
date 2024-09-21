@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+  <title>Focal Point</title>
+
+  <script type="module" src="/index.js" defer></script>
+</head>
+<body>
+  <header>
+    <img src="./assets/logo.svg" alt="imagem do logotipo, figura circular azul com alguns detalhes e ao lado escrito FocalPoint">
+    <p>Bem-vindo de volta, Marcus</p>
+    <p class="data">Segunda, 01 de dezembro de 2025</p>
+  </header>
+  
+  <div class="app">
+
+    <form id="my-form">
+
+      <fieldset>
+        <legend>Suas tarefas de hoje</legend>
+          
+          <div class="fieldset-wrapper">
+
+            <div class="checkbox-wrapper">
+              <input type="checkbox" name=" " id="wash-hands">
+              <label for="wash-hands">Lavar as mãos</label>
+              <img data-action="trash" src="/assets/trash.svg" alt="">
+            </div>
+
+            <div class="checkbox-wrapper">
+              <input type="checkbox" name=" " id="makeCake">
+              <label for="makeCake">Fazer um bolo</label>
+              <img data-action="trash" src="/assets/trash.svg" alt="">
+            </div>
+
+            <div class="checkbox-wrapper">
+              <input type="checkbox" name=" " id="wash-dishes">
+              <label for="wash-dishes">Lavar a louça</label>
+              <img data-action="trash" src="/assets/trash.svg" alt="">
+            </div>
+          </div>
+      </fieldset>
+
+      <fieldset class="completedTasks">
+        <legend>Tarefas Finalizadas</legend>
+
+          <div class="fieldset-wrapper">
+            <div class="checkbox-wrapper">
+              <input type="checkbox" name=" " id="takeOutTrash">
+              <label for="takeOutTrash">Levar o lixo para fora</label>
+              <img src="/assets/trash.svg" alt="">
+            </div>
+          </div>
+      </fieldset>
+    </form>
+
+    <div class="add" >
+      <button form="my-form">Adicionar nova tarefa</button>
+    </div>
+  </div>
+
+  <!-- Colocar a classe "open" junto com a classe modalAdd-wrapper quando abrir esse modal -->
+  <div class="modalAdd-wrapper">
+
+    <div class="modalAdd">
+      <h3 class="title">Nova Tarefa</h3>
+      <form action="">
+        <div class="modal-card">
+          <label for="newTask">Título</label>
+          <input type="text" id="newTask" placeholder="Digite">
+        </div>
+
+        <div class="buttons">
+          <button class="close">Cancelar</button>
+          <button>Adicionar</button>
+        </div>
+      </form>
+    </div>
+
+  </div>
+
+  <!-- Colocar a classe "open" junto com a classe modalDelete-wrapper quando abrir esse modal -->
+  <div class="modalDelete-wrapper">
+    <div class="modalDelete">
+      <h3 class="title">Deletar tarefa</h3>
+      <p>Tem certeza que você deseja deletar essa tarefa?</p>
+
+      <div class="buttons">
+        <button class="close">Cancelar</button>
+        <button class="delete">Deletar</button>
+      </div>
+
+    </div>
+  </div>
+
+</body>
+</html>
